@@ -1,5 +1,5 @@
 local api = require "luci.passwall.api"
-local appname = api.appname
+local appname = "passwall"
 local fs = api.fs
 local sys = api.sys
 local datatypes = api.datatypes
@@ -267,6 +267,10 @@ if sys.call('[ -f "/www/luci-static/resources/uci.js" ]') == 0 then
 	function m.on_apply(self)
 		luci.sys.call("/etc/init.d/passwall reload > /dev/null 2>&1 &")
 	end
+end
+
+function m.on_commit(self)
+	luci.sys.call('[ -n "$(nft list sets 2>/dev/null | grep \"passwall_\")" ] && sh /usr/share/passwall/nftables.sh flush_nftset || sh /usr/share/passwall/iptables.sh flush_ipset > /dev/null 2>&1 &')
 end
 
 return m

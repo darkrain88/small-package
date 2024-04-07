@@ -1,6 +1,6 @@
 "use strict";
 
-import { tls_outbound_settings, reality_outbound_settings } from "./tls.mjs";
+import { reality_outbound_settings, tls_outbound_settings } from "./tls.mjs";
 
 function stream_tcp_fake_http_request(server) {
     if (server["tcp_guise"] == "http") {
@@ -130,6 +130,13 @@ function stream_quic(server) {
     }
     return null;
 }
+
+export function port_array(i) {
+    if (type(i) === 'array') {
+        return map(i, v => int(v));
+    }
+    return [int(i)];
+};
 
 export function stream_settings(server, protocol, tag) {
     const security = server[protocol + "_tls"];
