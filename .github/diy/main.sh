@@ -26,6 +26,7 @@ git clone --depth 1 https://github.com/kiddin9/openwrt-openvpn && mvdir openwrt-
 git clone --depth 1 https://github.com/kiddin9/luci-app-xlnetacc
 git clone --depth 1 https://github.com/kiddin9/luci-app-wizard
 git clone --depth 1 -b 18.06 https://github.com/kiddin9/luci-theme-edge
+git clone --depth 1 https://github.com/derisamedia/luci-theme-alpha
 git clone --depth 1 https://github.com/yichya/luci-app-xray
 git clone --depth 1 https://github.com/Lienol/openwrt-package
 git clone --depth 1 https://github.com/ysc3839/openwrt-minieap
@@ -112,6 +113,7 @@ git clone --depth 1 https://github.com/Zxilly/UA2F
 git clone --depth 1 https://github.com/Huangjoe123/luci-app-eqos
 git clone --depth 1 https://github.com/honwen/luci-app-aliddns
 git clone --depth 1 https://github.com/immortalwrt/homeproxy
+git clone --depth 1 https://github.com/muink/luci-app-dnsproxy
 git clone --depth 1 https://github.com/ximiTech/luci-app-msd_lite
 git clone --depth 1 -b master https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic
 git clone --depth 1 https://github.com/sbwml/luci-app-alist openwrt-alist && mv -n openwrt-alist/*alist ./ ; rm -rf openwrt-alist
